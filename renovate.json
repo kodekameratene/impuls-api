@@ -1,5 +1,7 @@
 {
   "extends": [
     "@intuit"
-  ]
+  ],
+  "automerge": true,
+  "automergeType": "branch"
 }
