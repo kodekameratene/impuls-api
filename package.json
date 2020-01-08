@@ -27,7 +27,7 @@
     "dotenv": "8.2.0",
     "mongoose": "5.8.5",
     "reflect-metadata": "0.1.13",
-    "rimraf": "2.7.1",
+    "rimraf": "3.0.0",
     "rxjs": "6.5.4"
   },
   "devDependencies": {
