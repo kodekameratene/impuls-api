@@ -48,7 +48,7 @@
     "tsconfig-paths": "3.8.0",
     "tslint": "5.16.0",
     "typescript": "3.7.4",
-    "wait-on": "^3.2.0"
+    "wait-on": "3.3.0"
 
   },
   "jest": {
