@@ -1,9 +1,9 @@
 {
   "name": "impuls-api",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "license": "MIT",
+  "description": "Open api for all things Impuls",
+  "author": "Kodekameratene",
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
