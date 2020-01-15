@@ -41,16 +41,17 @@ export class ArrangementsService {
     }
 
     async getArrangements() {
-        const arrangements = await this.arrangementModel.find().exec();
-        return arrangements.map(arrangement => ({
-            id: arrangement.id,
-            title: arrangement.title,
-            description: arrangement.description,
-            location: arrangement.location,
-            startTime: arrangement.startTime,
-            endTime: arrangement.endTime,
-            imgUrl: arrangement.imgUrl,
-        }));
+        const arrangements = await this.arrangementModel.find().sort({startTime: 1}).exec();
+        return arrangements
+            .map(arrangement => ({
+                id: arrangement.id,
+                title: arrangement.title,
+                description: arrangement.description,
+                location: arrangement.location,
+                startTime: arrangement.startTime ? arrangement.startTime.toUTCString() : null,
+                endTime: arrangement.endTime ? arrangement.endTime.toUTCString() : null,
+                imgUrl: arrangement.imgUrl,
+            }));
     }
 
     async getArrangement(id: string) {
