@@ -24,7 +24,14 @@ Then install all project dependencies with yarn
 $ yarn
 ```
 
-App is now ready for development
+At last you will need to setup the dev-database for use.
+Create a `.env` file in the project root folder and add one line with your config like this:
+```
+mongoUri=ADD_THE_WHOLE_URI_HERE
+```
+
+That's it!
+The API is now ready for further development.
 
 ## Running the app
 
