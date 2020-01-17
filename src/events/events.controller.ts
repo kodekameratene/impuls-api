@@ -1,5 +1,5 @@
 import {EventsService} from './events.service';
-import {Body, Controller, Delete, Get, Param, Patch, Post} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Patch, Post, Query} from '@nestjs/common';
 
 @Controller('events')
 export class EventsController {
@@ -29,15 +29,13 @@ export class EventsController {
     }
 
     @Get()
-    async getAllEvents() {
-        return await this.eventsService.getEvents();
-    }
-
-    @Get('arrangement/:arrangement')
-    async getEventsForArrangement(
-        @Param('arrangement') arrangement: string,
+    async getAllEvents(
+        @Query('arrangement') arrangement: string,
     ) {
-        return await this.eventsService.getEventsWithArrangement(arrangement);
+        if (arrangement) {
+            return await this.eventsService.getEventsWithArrangement(arrangement);
+        }
+        return await this.eventsService.getEvents();
     }
 
     @Get(':id')

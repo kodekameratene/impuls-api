@@ -43,23 +43,15 @@ export class EventsService {
     }
 
     async getEvents() {
-        const events = await this.eventModel.find().exec();
+        const events = await this.eventModel.find().sort({startTime: 1}).exec();
         return events
-            // Should we sort the events? Probably :)
-            .sort((a: Event, b: Event) => {
-                return (
-                    a.startTime.getTime()
-                    -
-                    b.startTime.getTime()
-                );
-            })
             .map(event => ({
                 id: event.id,
                 title: event.title,
                 description: event.description,
                 location: event.location,
-                startTime: event.startTime ? event.startTime.toUTCString() : null,
-                endTime: event.endTime ? event.endTime.toUTCString() : null,
+                startTime: event.startTime ? event.startTime : null,
+                endTime: event.endTime ? event.endTime : null,
                 imgUrl: event.imgUrl,
                 arrangement: event.arrangement,
             }));
@@ -73,8 +65,8 @@ export class EventsService {
                 title: event.title,
                 description: event.description,
                 location: event.location,
-                startTime: event.startTime ? event.startTime.toUTCString() : null,
-                endTime: event.endTime ? event.endTime.toUTCString() : null,
+                startTime: event.startTime ? event.startTime : null,
+                endTime: event.endTime ? event.endTime : null,
                 imgUrl: event.imgUrl,
                 arrangement: event.arrangement,
             }));

@@ -48,8 +48,8 @@ export class ArrangementsService {
                 title: arrangement.title,
                 description: arrangement.description,
                 location: arrangement.location,
-                startTime: arrangement.startTime ? arrangement.startTime.toUTCString() : null,
-                endTime: arrangement.endTime ? arrangement.endTime.toUTCString() : null,
+                startTime: arrangement.startTime ? arrangement.startTime : null,
+                endTime: arrangement.endTime ? arrangement.endTime : null,
                 imgUrl: arrangement.imgUrl,
             }));
     }
