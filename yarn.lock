@@ -358,10 +358,10 @@
     express "4.17.1"
     multer "1.4.2"
 
-"@nestjs/swagger@4.1.13":
-  version "4.1.13"
-  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.1.13.tgz#c4b7b4e7b9f92064c60771d71c37088a067fc34d"
-  integrity sha512-N/Y6s1AO/bURdR8g2XtFWOvt2OSwPMIh8Ja88e16AWdIpO5zfJHPCVo/J9g3ziyYBAqupTWQqkVT99+HmadGKA==
+"@nestjs/swagger@4.1.14":
+  version "4.1.14"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.1.14.tgz#2ed0efb1d0d36ea55d39da315a35755c21d04d1f"
+  integrity sha512-2lpuUKH+hMDqnM0PgFwXDpFlFRttl3ID3OVRNowIrQB8ohEdUyeM4OqKxpFK0tXz4MUfdCOx/ZzAZZsL8Pc1cg==
   dependencies:
     lodash "4.17.15"
     path-to-regexp "3.2.0"
