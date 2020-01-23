@@ -6,9 +6,9 @@ export const EventSchema = new mongoose.Schema({
     location: String,
     startTime: Date,
     endTime: Date,
-    imgUrl: String,
+    image: String,
     arrangement: [{type: mongoose.Schema.Types.ObjectId, ref: 'Arrangement'}],
-
+    
 });
 
 export interface Event extends mongoose.Document {
@@ -18,6 +18,6 @@ export interface Event extends mongoose.Document {
     location: string;
     startTime: Date;
     endTime: Date;
-    imgUrl: string;
+    image: string;
     arrangement: string;
 }

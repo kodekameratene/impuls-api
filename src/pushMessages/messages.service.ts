@@ -2,17 +2,17 @@ import {Injectable, NotFoundException} from '@nestjs/common';
 import {InjectModel} from '@nestjs/mongoose';
 import {Model} from 'mongoose';
 
-import {Event} from './event.model';
+import {Message} from './message.model';
 
 @Injectable()
-export class EventsService {
+export class MessagesService {
 
     constructor(
-        @InjectModel('Event') private readonly eventModel: Model<Event>,
+        @InjectModel('Message') private readonly eventModel: Model<Message>,
     ) {
     }
 
-    async insertEvent(
+    async insertMessage(
         title: string,
         description: string,
         location: string,
@@ -21,7 +21,7 @@ export class EventsService {
         image: string,
         arrangement: string,
     ) {
-        const newEvent = new this.eventModel({
+        const newMessage = new this.eventModel({
             title,
             description,
             location,
@@ -30,19 +30,19 @@ export class EventsService {
             image,
             arrangement,
         });
-        const result = await newEvent.save();
+        const result = await newMessage.save();
         return result.id as string;
     }
 
-    async deleteEvent(id: string) {
+    async deleteMessage(id: string) {
         const response = await this.eventModel.deleteOne({_id: id}).exec();
         if (response.deletedCount < 1) {
-            throw new NotFoundException('Could not find Event');
+            throw new NotFoundException('Could not find Message');
         }
         return response;
     }
 
-    async getEvents() {
+    async getMessages() {
         const events = await this.eventModel.find().sort({startTime: 1}).exec();
         return events
             .map(event => ({
@@ -57,7 +57,7 @@ export class EventsService {
             }));
     }
 
-    async getEventsWithArrangement(arrangement) {
+    async getMessagesWithArrangement(arrangement) {
         const events = await this.eventModel.find({arrangement}).sort({startTime: 1}).exec();
         return events
             .map(event => ({
@@ -72,8 +72,8 @@ export class EventsService {
             }));
     }
 
-    async getEvent(id: string) {
-        const event = await this.findEvent(id);
+    async getMessage(id: string) {
+        const event = await this.findMessage(id);
         return ({
             id: event.id,
             title: event.title,
@@ -86,7 +86,7 @@ export class EventsService {
         });
     }
 
-    async updateEvent(
+    async updateMessage(
         id: string,
         title: string,
         description: string,
@@ -96,33 +96,33 @@ export class EventsService {
         image: string,
         arrangement: string,
     ) {
-        const updatedEvent = await this.findEvent(id);
+        const updatedMessage = await this.findMessage(id);
         if (title) {
-            updatedEvent.title = title;
+            updatedMessage.title = title;
         }
         if (description) {
-            updatedEvent.description = description;
+            updatedMessage.description = description;
         }
         if (location) {
-            updatedEvent.location = location;
+            updatedMessage.location = location;
         }
         if (startTime) {
-            updatedEvent.startTime = startTime;
+            updatedMessage.startTime = startTime;
         }
         if (endTime) {
-            updatedEvent.endTime = endTime;
+            updatedMessage.endTime = endTime;
         }
         if (image) {
-            updatedEvent.image = image;
+            updatedMessage.image = image;
         }
         if (arrangement) {
-            updatedEvent.arrangement = arrangement;
+            updatedMessage.arrangement = arrangement;
         }
-        await updatedEvent.save();
+        await updatedMessage.save();
         return null;
     }
 
-    private async findEvent(id): Promise<Event> {
+    private async findMessage(id): Promise<Message> {
         let event;
         try {
             event = await this.eventModel.findById(id).exec();

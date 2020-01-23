@@ -1,14 +1,14 @@
-import {EventsService} from './events.service';
+import {MessagesService} from './messages.service';
 import {Body, Controller, Delete, Get, Param, Patch, Post, Query} from '@nestjs/common';
 import _ = require('lodash');
 
 @Controller('events')
-export class EventsController {
-    constructor(private readonly eventsService: EventsService) {
+export class MessagesController {
+    constructor(private readonly eventsService: MessagesService) {
     }
 
     @Post()
-    async addEvent(
+    async addMessage(
         @Body('title') title: string,
         @Body('description') description: string,
         @Body('location') location: string,
@@ -17,7 +17,7 @@ export class EventsController {
         @Body('image') image: string,
         @Body('arrangement') arrangement: string,
     ) {
-        const generatedId = await this.eventsService.insertEvent(
+        const generatedId = await this.eventsService.insertMessage(
             title,
             description,
             location,
@@ -30,15 +30,15 @@ export class EventsController {
     }
 
     @Get()
-    async getAllEvents(
+    async getAllMessages(
         @Query('arrangement') arrangement: string,
         @Query('groupBy') groupBy: string,
     ) {
         let eventsToReturn;
         if (arrangement) {
-            eventsToReturn = await this.eventsService.getEventsWithArrangement(arrangement);
+            eventsToReturn = await this.eventsService.getMessagesWithArrangement(arrangement);
         } else {
-            eventsToReturn = await this.eventsService.getEvents();
+            eventsToReturn = await this.eventsService.getMessages();
         }
         if (groupBy) {
             eventsToReturn = _.groupBy(eventsToReturn, groupBy);
@@ -47,12 +47,12 @@ export class EventsController {
     }
 
     @Get(':id')
-    getEvent(@Param('id') id: string) {
-        return this.eventsService.getEvent(id);
+    getMessage(@Param('id') id: string) {
+        return this.eventsService.getMessage(id);
     }
 
     @Patch(':id')
-    async updateEvent(
+    async updateMessage(
         @Param('id') id: string,
         @Body('title') title: string,
         @Body('description') description: string,
@@ -62,11 +62,11 @@ export class EventsController {
         @Body('image') image: string,
         @Body('arrangement') arrangement: string,
     ) {
-        return await this.eventsService.updateEvent(id, title, description, location, startTime, endTime, image, arrangement);
+        return await this.eventsService.updateMessage(id, title, description, location, startTime, endTime, image, arrangement);
     }
 
     @Delete(':id')
-    async removeEvent(@Param('id') id: string) {
-        return await this.eventsService.deleteEvent(id);
+    async removeMessage(@Param('id') id: string) {
+        return await this.eventsService.deleteMessage(id);
     }
 }

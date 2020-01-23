@@ -13,7 +13,7 @@ export class ArrangementsController {
         @Body('location') location: string,
         @Body('startTime') startTime: Date,
         @Body('endTime') endTime: Date,
-        @Body('imgUrl') imgUrl: string,
+        @Body('image') image: string,
     ) {
         const generatedId = await this.arrangementsService.insertArrangement(
             title,
@@ -21,7 +21,7 @@ export class ArrangementsController {
             location,
             startTime,
             endTime,
-            imgUrl,
+            image,
         );
         return {id: generatedId};
     }
@@ -44,9 +44,9 @@ export class ArrangementsController {
         @Body('location') location: string,
         @Body('startTime') startTime: Date,
         @Body('endTime') endTime: Date,
-        @Body('imgUrl') imgUrl: string,
+        @Body('image') image: string,
     ) {
-        return await this.arrangementsService.updateArrangement(id, title, description, location, startTime, endTime, imgUrl);
+        return await this.arrangementsService.updateArrangement(id, title, description, location, startTime, endTime, image);
     }
 
     @Delete(':id')

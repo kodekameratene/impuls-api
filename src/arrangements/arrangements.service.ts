@@ -18,7 +18,7 @@ export class ArrangementsService {
         location: string,
         startTime: Date,
         endTime: Date,
-        imgUrl: string,
+        image: string,
     ) {
         const newArrangement = new this.arrangementModel({
             title,
@@ -26,7 +26,7 @@ export class ArrangementsService {
             location,
             startTime,
             endTime,
-            imgUrl,
+            image,
         });
         const result = await newArrangement.save();
         return result.id as string;
@@ -50,7 +50,7 @@ export class ArrangementsService {
                 location: arrangement.location,
                 startTime: arrangement.startTime ? arrangement.startTime : null,
                 endTime: arrangement.endTime ? arrangement.endTime : null,
-                imgUrl: arrangement.imgUrl,
+                image: arrangement.image,
             }));
     }
 
@@ -63,11 +63,11 @@ export class ArrangementsService {
             location: arrangement.location,
             startTime: arrangement.startTime,
             endTime: arrangement.endTime,
-            imgUrl: arrangement.imgUrl,
+            image: arrangement.image,
         });
     }
 
-    async updateArrangement(id: string, title: string, description: string, location: string, startTime: Date, endTime: Date, imgUrl: string) {
+    async updateArrangement(id: string, title: string, description: string, location: string, startTime: Date, endTime: Date, image: string) {
         const updatedArrangement = await this.findArrangement(id);
         if (title) {
             updatedArrangement.title = title;
@@ -84,8 +84,8 @@ export class ArrangementsService {
         if (endTime) {
             updatedArrangement.endTime = endTime;
         }
-        if (imgUrl) {
-            updatedArrangement.imgUrl = imgUrl;
+        if (image) {
+            updatedArrangement.image = image;
         }
         await updatedArrangement.save();
         return null;
