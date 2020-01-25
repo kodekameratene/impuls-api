@@ -16,7 +16,7 @@ export class InfoPostsService {
         title: string,
         description: string,
         location: string,
-        draft: boolean,
+        published: boolean,
         index: number,
         image: string,
         arrangement: string,
@@ -25,7 +25,7 @@ export class InfoPostsService {
                 title,
                 description,
                 location,
-                draft,
+                published,
                 index,
                 image,
                 arrangement,
@@ -44,7 +44,7 @@ export class InfoPostsService {
     }
 
     async getInfoPosts() {
-        const infoPosts = await this.infoPostModel.find().sort({publishTime: 1}).exec();
+        const infoPosts = await this.infoPostModel.find({published: true}).sort({index: 1}).exec();
         return infoPosts
             .map(infoPost => ({
                 id: infoPost.id,
@@ -52,14 +52,14 @@ export class InfoPostsService {
                 description: infoPost.description,
                 location: infoPost.location,
                 index: infoPost.index,
-                draft: infoPost.draft,
+                published: infoPost.published,
                 image: infoPost.image,
                 arrangement: infoPost.arrangement,
             }));
     }
 
     async getInfoPostsWithArrangement(arrangement) {
-        const infoPosts = await this.infoPostModel.find({arrangement}).sort({publishTime: 1}).exec();
+        const infoPosts = await this.infoPostModel.find({arrangement, published: true}).sort({index: 1}).exec();
         return infoPosts
             .map(infoPost => ({
                 id: infoPost.id,
@@ -67,7 +67,7 @@ export class InfoPostsService {
                 description: infoPost.description,
                 location: infoPost.location,
                 index: infoPost.index,
-                draft: infoPost.draft,
+                published: infoPost.published,
                 image: infoPost.image,
                 arrangement: infoPost.arrangement,
             }));
@@ -81,7 +81,7 @@ export class InfoPostsService {
             description: infoPost.description,
             location: infoPost.location,
             index: infoPost.index,
-            draft: infoPost.draft,
+            published: infoPost.published,
             image: infoPost.image,
             arrangement: infoPost.arrangement,
         });
@@ -93,7 +93,7 @@ export class InfoPostsService {
         description: string,
         location: string,
         index: number,
-        draft: boolean,
+        published: boolean,
         image: string,
         arrangement: string,
     ) {
@@ -107,8 +107,8 @@ export class InfoPostsService {
         if (location) {
             updatedInfoPost.location = location;
         }
-        if (draft) {
-            updatedInfoPost.draft = draft;
+        if (published) {
+            updatedInfoPost.published = published;
         }
         if (index) {
             updatedInfoPost.index = index;

@@ -67,3 +67,13 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Heroku
+Until I get my server set up correctly, I'm hosting this api on heroku. 
+And it can be reached on impuls-api.herokuapp.com
+
+And, for future reference;
+Here is the command I use for deploying to said service.
+```bash
+heroku container:push web -a impuls-api
+``` 

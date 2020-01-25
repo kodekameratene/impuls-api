@@ -12,7 +12,7 @@ export class InfoPostsController {
         @Body('title') title: string,
         @Body('description') description: string,
         @Body('location') location: string,
-        @Body('draft') draft: boolean,
+        @Body('published') published: boolean,
         @Body('index') index: number,
         @Body('image') image: string,
         @Body('arrangement') arrangement: string,
@@ -21,7 +21,7 @@ export class InfoPostsController {
             title,
             description,
             location,
-            draft,
+            published,
             index,
             image,
             arrangement,
@@ -57,12 +57,12 @@ export class InfoPostsController {
         @Body('title') title: string,
         @Body('description') description: string,
         @Body('location') location: string,
-        @Body('draft') draft: boolean,
+        @Body('published') published: boolean,
         @Body('index') index: number,
         @Body('image') image: string,
         @Body('arrangement') arrangement: string,
     ) {
-        return await this.infoPostsService.updateInfoPost(id, title, description, location, index, draft, image, arrangement);
+        return await this.infoPostsService.updateInfoPost(id, title, description, location, index, published, image, arrangement);
     }
 
     @Delete(':id')
