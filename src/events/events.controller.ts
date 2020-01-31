@@ -15,6 +15,7 @@ export class EventsController {
         @Body('startTime') startTime: Date,
         @Body('endTime') endTime: Date,
         @Body('image') image: string,
+        @Body('secret') secret: boolean,
         @Body('arrangement') arrangement: string,
     ) {
         const generatedId = await this.eventsService.insertEvent(
@@ -24,6 +25,7 @@ export class EventsController {
             startTime,
             endTime,
             image,
+            secret,
             arrangement,
         );
         return {id: generatedId};
@@ -33,12 +35,13 @@ export class EventsController {
     async getAllEvents(
         @Query('arrangement') arrangement: string,
         @Query('groupBy') groupBy: string,
+        @Query('secret') secret: boolean,
     ) {
         let eventsToReturn;
         if (arrangement) {
             eventsToReturn = await this.eventsService.getEventsWithArrangement(arrangement);
         } else {
-            eventsToReturn = await this.eventsService.getEvents();
+            eventsToReturn = await this.eventsService.getEvents(secret);
         }
         if (groupBy) {
             eventsToReturn = _.groupBy(eventsToReturn, groupBy);
@@ -60,9 +63,10 @@ export class EventsController {
         @Body('startTime') startTime: Date,
         @Body('endTime') endTime: Date,
         @Body('image') image: string,
+        @Body('secret')secret: boolean,
         @Body('arrangement') arrangement: string,
     ) {
-        return await this.eventsService.updateEvent(id, title, description, location, startTime, endTime, image, arrangement);
+        return await this.eventsService.updateEvent(id, title, description, location, startTime, endTime, image, secret, arrangement);
     }
 
     @Delete(':id')

@@ -24,7 +24,7 @@ export class NewsPostsService {
                 title,
                 description,
                 location,
-                publishTime: publishTime !== null ? publishTime : Date.now(), // Setting publish-time to now if not provided
+                publishTime: publishTime !== null ? publishTime : new Date(Date.now()), // Setting publish-time to now if not provided
                 image,
                 arrangement,
             })
@@ -41,8 +41,12 @@ export class NewsPostsService {
         return response;
     }
 
-    async getNewsPosts() {
-        const newsPosts = await this.newsPostModel.find().sort({publishTime: 1}).exec();
+    async getNewsPosts(secrets: boolean) {
+        const today = new Date(Date.now());
+        const newsPosts = await this.newsPostModel
+            // .find()
+            .find({publishTime: {$lte: today}})
+            .sort({publishTime: -1}).exec();
         return newsPosts
             .map(newsPost => ({
                 id: newsPost.id,
@@ -51,8 +55,11 @@ export class NewsPostsService {
                 location: newsPost.location,
                 publishTime: newsPost.publishTime,
                 image: newsPost.image,
+                secret: newsPost.secret,
                 arrangement: newsPost.arrangement,
-            }));
+            })).filter(post => {
+                return secrets ? true : !post.secret;
+            });
     }
 
     async getNewsPostsWithArrangement(arrangement) {
@@ -89,6 +96,7 @@ export class NewsPostsService {
         location: string,
         publishTime: Date,
         image: string,
+        secret: boolean,
         arrangement: string,
     ) {
         const updatedNewsPost = await this.findNewsPost(id);
@@ -106,6 +114,9 @@ export class NewsPostsService {
         }
         if (image) {
             updatedNewsPost.image = image;
+        }
+        if (secret) {
+            updatedNewsPost.secret = secret;
         }
         if (arrangement) {
             updatedNewsPost.arrangement = arrangement;

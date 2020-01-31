@@ -14,6 +14,7 @@ export class NewsPostsController {
         @Body('location') location: string,
         @Body('publishTime') publishTime: Date,
         @Body('image') image: string,
+        @Body('secret') secret: boolean,
         @Body('arrangement') arrangement: string,
     ) {
         const generatedId = await this.newsPostsService.insertNewsPost(
@@ -31,12 +32,13 @@ export class NewsPostsController {
     async getAllNewsPosts(
         @Query('arrangement') arrangement: string,
         @Query('groupBy') groupBy: string,
+        @Query('secrets') secrets: boolean,
     ) {
         let newsPostsToReturn;
         if (arrangement) {
             newsPostsToReturn = await this.newsPostsService.getNewsPostsWithArrangement(arrangement);
         } else {
-            newsPostsToReturn = await this.newsPostsService.getNewsPosts();
+            newsPostsToReturn = await this.newsPostsService.getNewsPosts(secrets);
         }
         if (groupBy) {
             newsPostsToReturn = _.groupBy(newsPostsToReturn, groupBy);
@@ -57,9 +59,10 @@ export class NewsPostsController {
         @Body('location') location: string,
         @Body('publishTime') publishTime: Date,
         @Body('image') image: string,
+        @Body('secret')secret: boolean,
         @Body('arrangement') arrangement: string,
     ) {
-        return await this.newsPostsService.updateNewsPost(id, title, description, location, publishTime, image, arrangement);
+        return await this.newsPostsService.updateNewsPost(id, title, description, location, publishTime, image, secret, arrangement);
     }
 
     @Delete(':id')

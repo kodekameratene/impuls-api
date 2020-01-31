@@ -6,6 +6,7 @@ export const NewsPostSchema = new mongoose.Schema({
     location: String,
     publishTime: Date,
     image: String,
+    secret: Boolean,
     arrangement: [{type: mongoose.Schema.Types.ObjectId, ref: 'Arrangement'}],
 });
 
@@ -16,5 +17,6 @@ export interface NewsPost extends mongoose.Document {
     location: string;
     publishTime: Date;
     image: string;
+    secret: boolean;
     arrangement: string;
 }

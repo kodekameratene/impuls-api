@@ -19,6 +19,7 @@ export class InfoPostsService {
         published: boolean,
         index: number,
         image: string,
+        secret: boolean,
         arrangement: string,
     ) {
         const newInfoPost = new this.infoPostModel({
@@ -28,6 +29,7 @@ export class InfoPostsService {
                 published,
                 index,
                 image,
+                secret,
                 arrangement,
             })
         ;
@@ -43,7 +45,7 @@ export class InfoPostsService {
         return response;
     }
 
-    async getInfoPosts() {
+    async getInfoPosts(secrets: boolean) {
         const infoPosts = await this.infoPostModel.find({published: true}).sort({index: 1}).exec();
         return infoPosts
             .map(infoPost => ({
@@ -54,8 +56,11 @@ export class InfoPostsService {
                 index: infoPost.index,
                 published: infoPost.published,
                 image: infoPost.image,
+                secret: infoPost.secret,
                 arrangement: infoPost.arrangement,
-            }));
+            })).filter(post => {
+                return secrets ? true : !post.secret;
+            });
     }
 
     async getInfoPostsWithArrangement(arrangement) {
@@ -95,28 +100,32 @@ export class InfoPostsService {
         index: number,
         published: boolean,
         image: string,
+        secret: boolean,
         arrangement: string,
     ) {
         const updatedInfoPost = await this.findInfoPost(id);
-        if (title) {
+        if (title !== undefined) {
             updatedInfoPost.title = title;
         }
-        if (description) {
+        if (description !== undefined) {
             updatedInfoPost.description = description;
         }
-        if (location) {
+        if (location !== undefined) {
             updatedInfoPost.location = location;
         }
-        if (published) {
+        if (published !== null) {
             updatedInfoPost.published = published;
         }
-        if (index) {
+        if (index !== undefined) {
             updatedInfoPost.index = index;
         }
-        if (image) {
+        if (image !== undefined) {
             updatedInfoPost.image = image;
         }
-        if (arrangement) {
+        if (secret !== null) {
+            updatedInfoPost.secret = secret;
+        }
+        if (arrangement !== undefined) {
             updatedInfoPost.arrangement = arrangement;
         }
         await updatedInfoPost.save();

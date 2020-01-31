@@ -7,6 +7,7 @@ export const InfoPostSchema = new mongoose.Schema({
     index: Number,
     published: Boolean,
     image: String,
+    secret: Boolean,
     arrangement: [{type: mongoose.Schema.Types.ObjectId, ref: 'Arrangement'}],
 });
 
@@ -18,5 +19,6 @@ export interface InfoPost extends mongoose.Document {
     index: number;
     published: boolean;
     image: string;
+    secret: boolean;
     arrangement: string;
 }

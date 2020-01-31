@@ -15,6 +15,7 @@ export class InfoPostsController {
         @Body('published') published: boolean,
         @Body('index') index: number,
         @Body('image') image: string,
+        @Body('secret') secret: boolean,
         @Body('arrangement') arrangement: string,
     ) {
         const generatedId = await this.infoPostsService.insertInfoPost(
@@ -24,6 +25,7 @@ export class InfoPostsController {
             published,
             index,
             image,
+            secret,
             arrangement,
         );
         return {id: generatedId};
@@ -33,12 +35,13 @@ export class InfoPostsController {
     async getAllInfoPosts(
         @Query('arrangement') arrangement: string,
         @Query('groupBy') groupBy: string,
+        @Query('secrets') secrets: boolean,
     ) {
         let infoPostsToReturn;
         if (arrangement) {
             infoPostsToReturn = await this.infoPostsService.getInfoPostsWithArrangement(arrangement);
         } else {
-            infoPostsToReturn = await this.infoPostsService.getInfoPosts();
+            infoPostsToReturn = await this.infoPostsService.getInfoPosts(secrets);
         }
         if (groupBy) {
             infoPostsToReturn = _.groupBy(infoPostsToReturn, groupBy);
@@ -60,9 +63,10 @@ export class InfoPostsController {
         @Body('published') published: boolean,
         @Body('index') index: number,
         @Body('image') image: string,
+        @Body('secret') secret: boolean,
         @Body('arrangement') arrangement: string,
     ) {
-        return await this.infoPostsService.updateInfoPost(id, title, description, location, index, published, image, arrangement);
+        return await this.infoPostsService.updateInfoPost(id, title, description, location, index, published, image, secret, arrangement);
     }
 
     @Delete(':id')

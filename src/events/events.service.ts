@@ -19,6 +19,7 @@ export class EventsService {
         startTime: Date,
         endTime: Date,
         image: string,
+        secret: boolean,
         arrangement: string,
     ) {
         const newEvent = new this.eventModel({
@@ -28,6 +29,7 @@ export class EventsService {
             startTime,
             endTime,
             image,
+            secret,
             arrangement,
         });
         const result = await newEvent.save();
@@ -42,7 +44,7 @@ export class EventsService {
         return response;
     }
 
-    async getEvents() {
+    async getEvents(secrets: boolean) {
         const events = await this.eventModel.find().sort({startTime: 1}).exec();
         return events
             .map(event => ({
@@ -53,8 +55,11 @@ export class EventsService {
                 startTime: event.startTime ? event.startTime : null,
                 endTime: event.endTime ? event.endTime : null,
                 image: event.image,
+                secret: event.secret,
                 arrangement: event.arrangement,
-            }));
+            })).filter(post => {
+                return secrets ? true : !post.secret;
+            });
     }
 
     async getEventsWithArrangement(arrangement) {
@@ -82,6 +87,7 @@ export class EventsService {
             startTime: event.startTime,
             endTime: event.endTime,
             image: event.image,
+            secret: event.secret,
             arrangement: event.arrangement,
         });
     }
@@ -94,6 +100,7 @@ export class EventsService {
         startTime: Date,
         endTime: Date,
         image: string,
+        secret: boolean,
         arrangement: string,
     ) {
         const updatedEvent = await this.findEvent(id);
@@ -114,6 +121,9 @@ export class EventsService {
         }
         if (image) {
             updatedEvent.image = image;
+        }
+        if (secret) {
+            updatedEvent.secret = secret;
         }
         if (arrangement) {
             updatedEvent.arrangement = arrangement;
