@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag impuls-api:$(date +%s)
-
+    - name: Build and Publish Docker
+      uses: jerray/publish-docker-action@v1.0.3
+      with:
+        username: ${{secrets.DockerHubUsername}}
+        password: ${{secrets.DockerHubPassword}}
