@@ -409,10 +409,10 @@
     multer "1.4.2"
     tslib "1.10.0"
 
-"@nestjs/swagger@4.3.1":
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.3.1.tgz#6ccae012c50e22b667b32df71bf5d0e4415d6b4e"
-  integrity sha512-IhgVZjK9m9hPJsco+e4zZmcGNnuiKTgUflQV4ib13/cW+XP4vKWgQIT66kwLeHbr1FmSYsnb7TsJ+2yiO/2lTw==
+"@nestjs/swagger@4.4.0":
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-4.4.0.tgz#0d778b9e0c6cf68acb378d46332439c173e867e3"
+  integrity sha512-QatyTW8VANCEltPErW1t3yBam17e/5fsaZI7DfnLEMtya5LypDlicKdQN1BrWDbhBEhSbwQ5TZifdUs7lo3dlw==
   dependencies:
     lodash "4.17.15"
     path-to-regexp "3.2.0"
