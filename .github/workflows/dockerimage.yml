@@ -1,16 +1,16 @@
-name: Docker Image CI
+# name: Docker Image CI
 
-on: [push]
+# on: [push]
 
-jobs:
+# jobs:
 
-  build:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Build and Publish Docker
-      uses: jerray/publish-docker-action@v1.0.3
-      with:
-        username: ${{secrets.DockerHubUsername}}
-        password: ${{secrets.DockerHubPassword}}
+#     steps:
+#     - name: Build and Publish Docker
+#       uses: jerray/publish-docker-action@v1.0.3
+#       with:
+#         username: ${{secrets.DockerHubUsername}}
+#         password: ${{secrets.DockerHubPassword}}
