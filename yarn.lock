@@ -471,21 +471,21 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@nestjs/common@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.2.0.tgz#f191c79dca5939188544975e624c1ab0fcb2f4db"
-  integrity sha512-R9oU/uni80/a/oDV3/T7ZtoJ9GMcLj5bOQrmaanAKAe50+xIueAR4R7hwYun3wSL/uvbAT1N9g4EXI3zkboCHw==
+"@nestjs/common@7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-7.3.1.tgz#9ed4ccf0086c308985c785fb9ac0c9265596d7e6"
+  integrity sha512-zrd/C+g2QVg2ebVN22Bs8U2Je9aHDWcysNfZFSGpqc+rLRjqDr0ixr1GL3WEhQSyxAm4YRa0yvZiiFicbVAV7Q==
   dependencies:
     axios "0.19.2"
     cli-color "2.0.0"
     iterare "1.2.1"
     tslib "2.0.0"
-    uuid "8.1.0"
+    uuid "8.2.0"
 
-"@nestjs/core@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.2.0.tgz#759b0a5e4faacb2770215ed4537a0df8d088f093"
-  integrity sha512-E0sDv2rmL0M3rOsBUq26ktQxtVBpJ7vdPFDOsC3iZkCEb+6iN2XGW77olpJtfeROqZ6cR9vSO2m2RPJzFkeMyQ==
+"@nestjs/core@7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-7.3.1.tgz#42241b048445d41016c26d9056083609b8cf64a9"
+  integrity sha512-UHhptzOIXDeZV6IiqnrG1ITj6qZkfMG8KuXmUssLXd2jexgxZDTxH6EDlb7ZjatljIS8EMRBf6VZUWj+BxucYQ==
   dependencies:
     "@nuxtjs/opencollective" "0.2.2"
     fast-safe-stringify "2.0.7"
@@ -493,7 +493,7 @@
     object-hash "2.0.3"
     path-to-regexp "3.2.0"
     tslib "2.0.0"
-    uuid "8.1.0"
+    uuid "8.2.0"
 
 "@nestjs/mapped-types@0.0.5":
   version "0.0.5"
@@ -505,10 +505,10 @@
   resolved "https://registry.yarnpkg.com/@nestjs/mongoose/-/mongoose-7.0.1.tgz#832ec72621cc9103c03dc294818c1ae749a483e3"
   integrity sha512-DbYz1HpP3P9KvrnlIPKTUibFJTtk85RKCmyt6YHor9+vz7pILI6lA9Ha+X7F0upBK3R2KHMSmaLd4Khdo06iNg==
 
-"@nestjs/platform-express@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.2.0.tgz#3829de2568cb5cb1edc59e65a745dedec307527b"
-  integrity sha512-nVk9yFrzMhtBRmj9FAEx7ILbmcUBRy2arGEtEQuuWpCUnI5LRIQq5n7f/wJsTOr5Wf70xts2Bud2S4HpMp1Rfw==
+"@nestjs/platform-express@7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-7.3.1.tgz#cb7a214ea2f62cde5ad489b1ab645be515f308b1"
+  integrity sha512-3tccSPCOGO+cOIGSDnFN1SrId2cw9ZCsNHa7wXsJu9ATcPprbAnmr9EGG4vYJSxwNt2AR/bZc8ygbwnPUfLyMQ==
   dependencies:
     body-parser "1.19.0"
     cors "2.8.5"
@@ -5189,10 +5189,10 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
 
-uuid@8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.1.0.tgz#6f1536eb43249f473abc6bd58ff983da1ca30d8d"
-  integrity sha512-CI18flHDznR0lq54xBycOVmphdCYnQLKn8abKn7PXUiKUGdEd+/l9LWNJmugXel4hXq7S+RMNl34ecyC9TntWg==
+uuid@8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.2.0.tgz#cb10dd6b118e2dada7d0cd9730ba7417c93d920e"
+  integrity sha512-CYpGiFTUrmI6OBMkAdjSDM0k5h8SkkiTP4WAjQgDgNB1S3Ou9VBEvr6q0Kv2H1mMk7IWfxYGpMH5sd5AvcIV2Q==
 
 uuid@^3.3.2:
   version "3.4.0"
