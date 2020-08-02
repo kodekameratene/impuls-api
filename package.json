@@ -42,7 +42,7 @@
     "@types/node": "10.17.13",
     "@types/supertest": "2.0.10",
     "concurrently": "5.2.0",
-    "jest": "26.1.0",
+    "jest": "26.2.2",
     "nodemon": "2.0.4",
     "prettier": "2.0.5",
     "supertest": "4.0.2",
