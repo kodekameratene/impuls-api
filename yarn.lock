@@ -283,10 +283,10 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@intuit/renovate-config@1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@intuit/renovate-config/-/renovate-config-1.2.4.tgz#2a8e547c7594c0bc2359bca91f83ae199d855f88"
-  integrity sha512-QOo448716rZqtArQ5WtaJ0oirhuug+83Iyk8RSQJ8wXxIwtJDNR/v7vA3L/JE9rPoRtdK8aMGn8VmHdvq3V51g==
+"@intuit/renovate-config@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@intuit/renovate-config/-/renovate-config-1.2.5.tgz#85237335b8d406034bc0bb3ab4f425105e08e96a"
+  integrity sha512-PFckg3oSV+thYVZ6wkEeAl+3yT/c4/iXbhrORNyqY7EZjNsJc3+cctbIgpqnbcp6cY369IVjBWHM9eXo14sluw==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
