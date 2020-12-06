@@ -33,7 +33,7 @@
     "swagger-ui-express": "4.1.5"
   },
   "devDependencies": {
-    "@intuit/renovate-config": "1.2.4",
+    "@intuit/renovate-config": "1.2.5",
     "@nestjs/testing": "7.5.5",
     "@types/express": "4.17.9",
     "@types/jest": "26.0.16",
