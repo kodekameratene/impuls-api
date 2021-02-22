@@ -1,24 +1,24 @@
-import * as mongoose from 'mongoose';
+import * as mongoose from "mongoose";
 
 export const EventSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    description: String,
-    location: String,
-    startTime: Date,
-    endTime: Date,
-    image: String,
-    secret: Boolean,
-    arrangement: [{type: mongoose.Schema.Types.ObjectId, ref: 'Arrangement'}],
+  title: { type: String, required: true },
+  description: String,
+  location: String,
+  startTime: Date,
+  endTime: Date,
+  image: String,
+  secret: Boolean,
+  arrangement: [{ type: mongoose.Schema.Types.ObjectId, ref: "Arrangement" }],
 });
 
 export interface Event extends mongoose.Document {
-    id: string;
-    title: string;
-    description: string;
-    location: string;
-    startTime: Date;
-    endTime: Date;
-    image: string;
-    secret: boolean;
-    arrangement: string;
+  id: string;
+  title: string;
+  description: string;
+  location: string;
+  startTime: Date;
+  endTime: Date;
+  image: string;
+  secret: boolean;
+  arrangement: string;
 }

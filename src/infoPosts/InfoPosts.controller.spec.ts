@@ -1,7 +1,7 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { InfoPostsController } from './InfoPosts.controller';
+import { Test, TestingModule } from "@nestjs/testing";
+import { InfoPostsController } from "./InfoPosts.controller";
 
-describe('InfoPosts Controller', () => {
+describe("InfoPosts Controller", () => {
   let controller: InfoPostsController;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('InfoPosts Controller', () => {
     controller = module.get<InfoPostsController>(InfoPostsController);
   });
 
-  it('should be defined', () => {
+  it("should be defined", () => {
     expect(controller).toBeDefined();
   });
 });
