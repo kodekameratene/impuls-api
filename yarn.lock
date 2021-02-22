@@ -3805,7 +3805,7 @@ negotiator@0.6.2:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
   integrity sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==
 
-nestjs-admin@^0.4.1:
+nestjs-admin@0.4.1:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/nestjs-admin/-/nestjs-admin-0.4.1.tgz#c193c5feb559a687889ffb86a5ffe91f13a605ed"
   integrity sha512-kkpP4xB48B8LHvJy05ChuC0sPNBts7YMnrcJhQAhLvpivZ3n6oj7j3aImeno7tuibMjPjxkUSIAy5HRKuTL0Bw==
