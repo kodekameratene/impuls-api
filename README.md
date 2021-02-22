@@ -33,18 +33,37 @@ mongoUri=ADD_THE_WHOLE_URI_HERE
 That's it!
 The API is now ready for further development.
 
+### Local developer database via docker 
+```bash
+docker run -d --name impuls-db \
+    -p 27017:27017 \
+    -e MONGO_INITDB_ROOT_USERNAME=impulsadmin \
+    -e MONGO_INITDB_ROOT_PASSWORD=impulspassword \
+    mongo
+```
+This will give us the mongoDB mongoURI `mongodb://impulsadmin:impulspassword@localhost:27017`
+
+Then you can browse the database with mongoDB Compass or add it to the .env file for local development.
+
+> NB. We haven't connected a volume to the docker-container, so everything will get reset when you restart the docker-container.
+
+
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
+Api should be running at localhost:3000.
+
+Checkout http://localhost:3000/api/ to get an overview of the api. (Swagger)
+
 
 # Running the app inside a Docker container
 
