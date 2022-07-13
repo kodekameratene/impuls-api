@@ -894,10 +894,10 @@
     multer "1.4.4-lts.1"
     tslib "2.4.0"
 
-"@nestjs/swagger@6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-6.0.1.tgz#ab5f39ab5db79faacef04665b90dd6980adb1e8c"
-  integrity sha512-rNpncETn+twpf3OPUtGO0MssEOd0cEqiklj2TZv+kAU9gmIWtC/p7Hf1hWbSp9C/l8vF1TnquK80oOaS2G0bAA==
+"@nestjs/swagger@6.0.3":
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-6.0.3.tgz#8a967e6ad3f543eb0a6621a31af80345e05369be"
+  integrity sha512-mpKfa1VOp7c8CPYdS403dO3XP8v6Hq6dI88yzzgmapKLEYPN0cFKXqTF2zULKv+BxqGl7EJM4h3P+cc0I9PStA==
   dependencies:
     "@nestjs/mapped-types" "1.1.0"
     js-yaml "4.1.0"
