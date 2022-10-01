@@ -25,7 +25,7 @@
     "@nestjs/mongoose": "9.2.0",
     "@nestjs/platform-express": "9.1.2",
     "@nestjs/swagger": "6.1.2",
-    "dotenv": "16.0.2",
+    "dotenv": "16.0.3",
     "mongoose": "6.6.2",
     "nestjs-admin": "0.4.1",
     "reflect-metadata": "0.1.13",
