@@ -22,7 +22,7 @@
   "dependencies": {
     "@nestjs/common": "9.3.10",
     "@nestjs/core": "9.3.10",
-    "@nestjs/mongoose": "9.2.1",
+    "@nestjs/mongoose": "9.2.2",
     "@nestjs/platform-express": "9.3.10",
     "@nestjs/swagger": "6.2.1",
     "dotenv": "16.0.3",
