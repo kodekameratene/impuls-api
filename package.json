@@ -31,7 +31,7 @@
     "reflect-metadata": "0.1.13",
     "rimraf": "5.0.0",
     "rxjs": "7.8.1",
-    "swagger-ui-express": "4.6.2"
+    "swagger-ui-express": "4.6.3"
   },
   "devDependencies": {
     "@intuit/renovate-config": "1.2.5",
