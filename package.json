@@ -36,7 +36,7 @@
   "devDependencies": {
     "@intuit/renovate-config": "1.2.5",
     "@nestjs/testing": "11.0.12",
-    "@types/express": "5.0.0",
+    "@types/express": "5.0.1",
     "@types/jest": "29.5.14",
     "@types/lodash": "4.17.16",
     "@types/mongoose": "5.11.97",
