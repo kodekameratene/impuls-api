@@ -41,7 +41,7 @@
     "@types/lodash": "4.17.16",
     "@types/mongoose": "5.11.97",
     "@types/node": "10.17.60",
-    "@types/supertest": "6.0.2",
+    "@types/supertest": "6.0.3",
     "concurrently": "9.1.2",
     "jest": "29.7.0",
     "nodemon": "3.1.9",
