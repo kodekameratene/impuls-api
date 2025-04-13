@@ -943,10 +943,10 @@
     path-to-regexp "8.2.0"
     swagger-ui-dist "5.20.5"
 
-"@nestjs/testing@11.0.13":
-  version "11.0.13"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-11.0.13.tgz#c7fcbba741e63fcfeab8c8540b1d4d4061c7d320"
-  integrity sha512-9E9HxD3EmiQky+pqYvpV0cHKlxYJJqHm2GmXoKHF72Raa0JTfQpamnLl6TPjDy2XOqA7oSSBDnEwku8vZ46Cdw==
+"@nestjs/testing@11.0.16":
+  version "11.0.16"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-11.0.16.tgz#9e6557e6ac99bdf58f67ecbfb3905bc4f7a30f12"
+  integrity sha512-PWIA4+LTee1LpJycp+BQj0JKut6852LWzST/f61Po1G3nlWAxhT9qWEeRdWgSJ4KD0Ci7oTVBJ9OyZ+xGlhXdg==
   dependencies:
     tslib "2.8.1"
 
