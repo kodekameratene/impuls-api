@@ -38,7 +38,7 @@
     "@nestjs/testing": "12.2.0",
     "@types/express": "5.0.6",
     "@types/jest": "30.0.0",
-    "@types/lodash": "4.17.26",
+    "@types/lodash": "4.17.27",
     "@types/mongoose": "5.11.97",
     "@types/node": "10.17.60",
     "@types/supertest": "7.2.1",
