@@ -1030,18 +1030,18 @@
     path-to-regexp "8.4.2"
     tslib "2.9.1"
 
-"@nestjs/swagger@12.1.0":
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-12.1.0.tgz#348178d48b5635a8cbc7a88d66079704d6176dcb"
-  integrity sha512-WpgAPV783os2TwEFarEDH9VulfQh2G+SCN2o+6jO1yNZT35ytvSUNs45suINxewRbo8Hmg72NZLWL+wre6i18Q==
+"@nestjs/swagger@12.1.1":
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-12.1.1.tgz#2234dcdff83e965b49c17b5fcc472c11d4cc8059"
+  integrity sha512-HD4iO7dN6cVFrRaWW7WdYbHkJv0Mr3lDqgIi/31iKBe0gV5bCLV6usWkzgTIXgLTCzd3eDI1cJWhsl5H04RLjQ==
   dependencies:
     "@microsoft/tsdoc" "0.17.1"
     "@nestjs/mapped-types" "12.0.1"
     "@standard-schema/spec" "1.1.0"
-    es-toolkit "1.52.0"
+    es-toolkit "1.53.1"
     js-yaml "5.5.0"
     path-to-regexp "8.4.2"
-    swagger-ui-dist "5.34.0"
+    swagger-ui-dist "5.34.1"
 
 "@nestjs/testing@12.3.3":
   version "12.3.3"
@@ -2554,10 +2554,10 @@ es-set-tostringtag@^2.1.0:
     has-tostringtag "^1.0.2"
     hasown "^2.0.2"
 
-es-toolkit@1.52.0:
-  version "1.52.0"
-  resolved "https://registry.yarnpkg.com/es-toolkit/-/es-toolkit-1.52.0.tgz#71eaf1a8b18834ef77637eccbb885ba4c03cd6dd"
-  integrity sha512-XTNEJQh1tY1ZJVcf6ayP/2n4ZPyaHlW2FWs7xvw5ddPuhUVjLD3olQVQS7kf58JbAB48iL0uL/jerTrjtV3lDA==
+es-toolkit@1.53.1:
+  version "1.53.1"
+  resolved "https://registry.yarnpkg.com/es-toolkit/-/es-toolkit-1.53.1.tgz#740294017da9f4ca052de31544648f3566b8ec5b"
+  integrity sha512-VhMc6IXmexu8iYFfL2aaAww6IvJTdHlqBLruLoEUs33YD4IcP5DdZcLOybMsMmmLsiy1c8PsiLsrM0DdIuuRUA==
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -5123,10 +5123,10 @@ supports-color@^8.1.1:
   dependencies:
     has-flag "^4.0.0"
 
-swagger-ui-dist@5.34.0:
-  version "5.34.0"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.34.0.tgz#5be3205fdaa7f3e7ec9fbb2ab6717c10e34e876b"
-  integrity sha512-H6tAIjr3XqE31PbkZl0OFya1ziRLDfTwh3J6OHdumPtPCLfjTnyLeagl/55kFNZcTOz9a9QI9WP0FXldwiGJag==
+swagger-ui-dist@5.34.1:
+  version "5.34.1"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.34.1.tgz#90e88ce4bc7488810ac4fd456917b70c12828723"
+  integrity sha512-VSr8fXfI93obYaQicLJbLUKGRxDojj/SfRJDDLCioGTUBj4BK/Nj4eE9jCeCAnJxVLi7iS+08PbiZLyrQKBkJQ==
   dependencies:
     "@scarf/scarf" "=1.4.0"
 
