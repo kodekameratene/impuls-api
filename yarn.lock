@@ -1030,10 +1030,10 @@
     path-to-regexp "8.4.2"
     tslib "2.9.1"
 
-"@nestjs/swagger@12.1.1":
-  version "12.1.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-12.1.1.tgz#2234dcdff83e965b49c17b5fcc472c11d4cc8059"
-  integrity sha512-HD4iO7dN6cVFrRaWW7WdYbHkJv0Mr3lDqgIi/31iKBe0gV5bCLV6usWkzgTIXgLTCzd3eDI1cJWhsl5H04RLjQ==
+"@nestjs/swagger@12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@nestjs/swagger/-/swagger-12.1.2.tgz#523e59fa6e35e2cb3fa5138ca40257d673bce036"
+  integrity sha512-MHQcw9eoO6crcOuBsdUXB/o4yV4OORtU/UNXELAc6WpQ6lxxwgl/CoVCILnRGWeDOxk4/E2s6Ftqu7xvb15X+A==
   dependencies:
     "@microsoft/tsdoc" "0.17.1"
     "@nestjs/mapped-types" "12.0.1"
