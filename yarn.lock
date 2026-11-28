@@ -1043,10 +1043,10 @@
     path-to-regexp "8.4.2"
     swagger-ui-dist "5.34.1"
 
-"@nestjs/testing@12.6.0":
-  version "12.6.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-12.6.0.tgz#a6968e52bc3505044b320ca315dcd16f76990b36"
-  integrity sha512-84whoYLvjORtUb/qD2QIYUsXHRUu654cmrbmzHFVrb38Vbox2wPQiQvu9LDtPdwEFiiMHUb5LIdWSolNvFa9ag==
+"@nestjs/testing@12.6.3":
+  version "12.6.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-12.6.3.tgz#3d0abdfc6766d1378a8b422db6ed2f38e5b412fa"
+  integrity sha512-nOdXJDZCoR7aH/3tBvuNS4VGPIAAIz5khNeQXHOLO6RBrvEg+wfx9fNyVZDog7UNtgWl1rb/CybyNvkaLpVeeA==
   dependencies:
     tslib "2.9.1"
 
